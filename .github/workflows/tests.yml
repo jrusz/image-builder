@@ -23,7 +23,7 @@ jobs:
         id: go
 
       - name: Check out code into the Go module directory
-        uses: actions/checkout@v3.0.2
+        uses: actions/checkout@v4
 
       - name: Cache downloaded Go version
         uses: actions/cache@v4
@@ -72,7 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.0.2
+        uses: actions/checkout@v4
       - name: Install openapi-spec-validator
         run: pip install openapi-spec-validator
       - name: Check v1 spec
@@ -82,7 +82,7 @@ jobs:
     name: "🐚 Shellcheck"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.0.2
+      - uses: actions/checkout@v4
       - name: Run ShellCheck
         uses: ludeeus/action-shellcheck@2.0.0
         with:
@@ -110,7 +110,7 @@ jobs:
         ports:
           - 5432:5432
     steps:
-      - uses: actions/checkout@v3.0.2
+      - uses: actions/checkout@v4
       - uses: actions/setup-go@v5.0.2
         with:
           go-version: '1.21'
@@ -132,7 +132,7 @@ jobs:
     name: "🎀 kube-linter"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.0.2
+      - uses: actions/checkout@v4
       - uses: redhat-actions/oc-installer@v1
       - name: Process template
         run: |
